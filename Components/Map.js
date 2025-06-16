@@ -5,6 +5,7 @@ import {
     Text,
     ActivityIndicator,
     Alert,
+    Dimensions,
 } from "react-native";
 import * as Location from "expo-location";
 import MapView, { Marker } from "react-native-maps";
@@ -45,8 +46,12 @@ export default function Map() {
 
     return (
         <View style={styles.container}>
+        <Text style={{
+        fontSize:20,
+        marginBottom: 5
+      }} >Your Location</Text>
             {loading ? (
-                <View style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}><ActivityIndicator size="large" color="#007AFF" /></View>
+                <View><ActivityIndicator size="large" color="#007AFF" /><Text>Loading Map...</Text></View>
             ) : initialRegion ? (
                 <MapView
                     style={styles.map}
@@ -72,10 +77,14 @@ export default function Map() {
 
 const styles = StyleSheet.create({
     container: {
-        marginTop: 10,
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'left',
+        marginTop: 20,
+        height: Dimensions.get('screen').height*0.45,
     },
     map: {
         width: '100%',
-        height: '95%',
+        height: Dimensions.get('screen').height*0.45,
     },
 });

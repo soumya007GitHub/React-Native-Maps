@@ -13,6 +13,7 @@ export default function Header() {
           style={styles.searchInput}
            onChangeText={setInputVal}
           value={inputVal}
+          placeholder='Cafe near me'
         /></View>
         <Image source={require('../assets/user.png')} style={styles.userImg}/>
     </View>
