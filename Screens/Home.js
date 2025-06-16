@@ -1,10 +1,12 @@
 import { View, Text, StyleSheet, Dimensions } from 'react-native';
 import Header from '../Components/Header';
+import Map from '../Components/Map';
 
 export default function Home() {
   return (
     <View  style={styles.container}>
       <Header/>
+      <Map/>
     </View>
   )
 }
